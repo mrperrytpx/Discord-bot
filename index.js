@@ -15,5 +15,18 @@ client.on('message', msg => {
     if (msg.content === 'ping') {
         msg.reply('Pong!');
     }
+    if (msg.channel.id === "360783461860114434") {
+        if (msg.content === "!prnt") {
+            console.log("Command recieved...");
+            const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
+            let array = [];
+            for(let i = 0; i < 6; i++) {
+                let ind = characters[Math.floor(Math.random() * characters.length)];
+                array.push(ind);
+            }
+            let query = array.join("");
+            msg.channel.send(`https://prnt.sc/${query}`);
+        }
+    }
 });
 
