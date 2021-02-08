@@ -1,10 +1,11 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const fetch = require("node-fetch");
 require("dotenv").config();
 
-const TOKEN = process.env.TOKEN;
+const BOT_TOKEN = process.env.BOT_TOKEN;
 
-client.login(TOKEN);
+client.login(BOT_TOKEN);
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
