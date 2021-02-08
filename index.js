@@ -15,7 +15,7 @@ client.on('message', msg => {
     if (msg.content === 'ping') {
         msg.reply('Pong!');
     }
-    if (msg.channel.id === "360783461860114434") {
+    if (msg.channel.id === "360783461860114434" || msg.channel.id === "361895356776054784") {
         if (msg.content === "!prnt") {
             console.log("Command recieved...");
             const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
