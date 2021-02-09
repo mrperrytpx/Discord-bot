@@ -16,7 +16,7 @@ client.on('message', msg => {
         msg.reply('Pong!');
     }
     if (msg.channel.id === "360783461860114434" || msg.channel.id === "361895356776054784") {
-        if (msg.content === "!prnt") {
+        if ((msg.content).toLowerCase() === "!prnt") {
             const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
             let array = [];
             for(let i = 0; i < 6; i++) {
