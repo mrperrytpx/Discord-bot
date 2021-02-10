@@ -11,7 +11,7 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('message', msg => {
+client.on('message', async msg => {
     if (msg.content === 'ping') {
         msg.reply('Pong!');
     }
@@ -30,7 +30,14 @@ client.on('message', msg => {
             const message = msg.content.split(" ");
             if (message.length > 2) {
                 const replyMessage = (message.slice(2)).join(" ");
-                msg.channel.send(`Searching for: ${replyMessage}`);
+                const youtubeURL = `https://decapi.me/youtube/videoid/${replyMessage}`;
+                try {
+                    let urlData = await fetch(youtubeURL);
+                    let data = await urlData.text();
+                    msg.channel.send(`https://www.youtube.com/watch?v=${data}`);
+                } catch (err) {
+                    console.log(err)
+                }                
             }
         }
     }
