@@ -26,6 +26,14 @@ client.on('message', msg => {
             let query = array.join("");
             msg.channel.send(`https://prnt.sc/${query}`);
         }
+        if ((msg.content).toLowerCase().includes("alexa play")) {
+            const message = msg.content.split(" ");
+            if (message.length > 2) {
+                const replyMessage = (message.slice(2)).join(" ");
+                msg.channel.send(`Searching for: ${replyMessage}`);
+            }
+        }
     }
+    
 });
 
