@@ -36,7 +36,6 @@ module.exports = async function checkTime(msg) {
                 .setThumbnail("https://cdn.discordapp.com/attachments/360783461860114434/795992709729878046/siprautist.png")
                 .setTitle("Time Checker")
                 .addField(`Time in ${cityWords}:`, `${number}:${minutes}`, true);
-            msg.channel.send(number);
             msg.channel.send(embededMessage);
         }
     }

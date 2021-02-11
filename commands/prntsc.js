@@ -3,6 +3,7 @@ const cheerio = require("cheerio");
 
 module.exports = async function prntsc(msg) {
     if ((msg.content).toLowerCase() === "!prnt") {
+
         const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
         let array = [];
         for(let i = 0; i < 6; i++) {
@@ -10,6 +11,7 @@ module.exports = async function prntsc(msg) {
             array.push(ind);
         }
         let query = array.join("");
+        
         try {
             let urlData = await axios.get(`https://prnt.sc/${query}`);
             let image = cheerio.load(urlData.data)
