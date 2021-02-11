@@ -82,7 +82,13 @@ client.on('message', async msg => {
             } else if (number < 0) {
                 number = 24 - Math.abs(number);
             }
-            msg.channel.send(`Time in ${cityWords} is: ${number}:${minutes}`);
+            const embededMessage = new Discord.MessageEmbed()
+                .setColor("#ffffff")
+                .setThumbnail("https://cdn.discordapp.com/attachments/360783461860114434/795992709729878046/siprautist.png")
+                .setTitle("Time Checker")
+                .addField(`Time in ${cityWords}:`, `${number}:${minutes}`, true);
+
+            msg.channel.send(embededMessage);
         }
     }
-});
+}); 
