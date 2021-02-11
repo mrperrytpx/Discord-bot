@@ -1,8 +1,8 @@
 {
   "name": "Discord-bot",
   "version": "1.0.0",
-  "engines": { 
-    "node": "14.15.4" 
+  "engines": {
+    "node": "14.15.4"
   },
   "description": "My dumb discord bot",
   "main": "index.js",
@@ -21,8 +21,9 @@
   },
   "homepage": "https://github.com/mrperrytpx/Discord-bot#readme",
   "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.5",
     "discord.js": "^12.5.1",
-    "dotenv": "^8.2.0",
-    "node-fetch": "^2.6.1"
+    "dotenv": "^8.2.0"
   }
 }
