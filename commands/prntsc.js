@@ -17,8 +17,7 @@ module.exports = async function prntsc(msg) {
             let image = cheerio.load(urlData.data)
             let imageSource = image("img#screenshot-image")[0].attribs.src;
             if (imageSource.includes("st.prntscr.com")) {
-                imageSource.slice(2);
-                msg.channel.send(imageSource);
+                msg.channel.send(`https:${imageSource}`);
             } else {
                 msg.channel.send(imageSource);
             }
