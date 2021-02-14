@@ -16,10 +16,14 @@ module.exports = async function prntsc(msg) {
             let urlData = await axios.get(`https://prnt.sc/${query}`);
             let image = cheerio.load(urlData.data)
             let imageSource = image("img#screenshot-image")[0].attribs.src;
-            msg.channel.send(imageSource);
+            if (imageSource.includes("st.prntscr.com")) {
+                imageSource.slice(2);
+                msg.channel.send(imageSource);
+            } else {
+                msg.channel.send(imageSource);
+            }
         } catch(err) {
             console.log(err)
         }
     }
 }
-
