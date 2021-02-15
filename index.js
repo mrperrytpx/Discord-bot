@@ -11,6 +11,7 @@ const prntsc = require("./commands/prntsc");
 const alexa = require("./commands/alexa");
 const checkTime = require("./commands/time");
 const imgur = require("./commands/imgur");
+const weatherReport = require("./commands/weatherReport");
 
 client.login(BOT_TOKEN);
 
@@ -24,4 +25,5 @@ client.on('message', async msg => {
     alexa(msg); 
     checkTime(msg);
     imgur(msg);
+    weatherReport(msg);
 }); 
