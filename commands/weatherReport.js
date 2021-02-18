@@ -7,6 +7,7 @@ module.exports = async function weatherReport(msg) {
         let poruka = msg.content.split(" ");
         let city, query;
         let cityWords = [];
+
         if (poruka.length === 1) {
             city = "Samobor";
             cityWords = "Samobor";
@@ -21,8 +22,6 @@ module.exports = async function weatherReport(msg) {
             cityWords = cityWords.join(" ");
         }
 
-
-
         try {
             const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${OW_API_KEY}&units=metric`
             const urlData = await axios.get(url);
@@ -34,7 +33,6 @@ module.exports = async function weatherReport(msg) {
 
             const currentDayUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${OW_API_KEY}&units=metric`;
             const currentDayData = await axios.get(currentDayUrl);
-            console.log(currentDayData.data);
             const currDayMorning = Math.round(currentDayData.data.main.temp_min);
             const currDayEvening = Math.round(currentDayData.data.main.temp_max);
             const currDayDescription = currentDayData.data.weather[0].description;
