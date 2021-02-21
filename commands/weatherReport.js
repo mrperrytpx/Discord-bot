@@ -86,7 +86,7 @@ module.exports = async function weatherReport(msg) {
             }
 
             const embededMessage = new Discord.MessageEmbed()
-                .setColor("#9C00B5")
+                .setColor("#1ECBE1")
                 .setTitle("Vremenska Prognoza")
                 .setAuthor("Valsimot", "https://cdn.discordapp.com/avatars/808355407495823371/3532774163d019b8b0fb29a6a5484df5.png")
                 .setDescription(`Prognoza za ${cityWords}\n\n Izvor: ${forecastData.data.hasOwnProperty("alerts") ? forecastData.data.alerts[0].sender_name : "just trust me bro lol"}`)
