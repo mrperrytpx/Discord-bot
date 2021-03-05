@@ -13,6 +13,7 @@ const checkTime = require("./commands/time");
 const imgur = require("./commands/imgur");
 const weatherReport = require("./commands/weatherReport");
 const akademiks = require('./commands/akademiks');
+const sayItAintSo = require("./commands/sayItAintSo");
 
 client.login(BOT_TOKEN);
 
@@ -28,4 +29,5 @@ client.on('message', async msg => {
     imgur(msg);
     weatherReport(msg);
     akademiks(msg);
+    sayItAintSo(msg);
 }); 
